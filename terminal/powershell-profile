@@ -7,8 +7,10 @@ if ($host.Name -eq 'ConsoleHost')
     Set-PSReadLineOption -PredictionSource History
     Set-PSReadLineOption -PredictionViewStyle ListView
     Set-PSReadLineOption -EditMode Windows
+
+    Install-Module -Name Terminal-Icons -Repository PSGallery
+    Import-Module -Name Terminal-Icons
 }
 
-Install-Module -Name Terminal-Icons -Repository PSGallery
-Import-Module -Name Terminal-Icons
+
 oh-my-posh --init --shell pwsh --config C:\source\public\terminal\ohmyposh-config.json | Invoke-Expression
