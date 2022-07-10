@@ -1,16 +1,18 @@
 using namespace System.Management.Automation
 using namespace System.Management.Automation.Language
- 
+
+# comment after first run
 if ($host.Name -eq 'ConsoleHost')
 {
     Install-Module -Name PSReadLine -AllowPrerelease -Scope CurrentUser -Force -SkipPublisherCheck
-    Set-PSReadLineOption -PredictionSource History
-    Set-PSReadLineOption -PredictionViewStyle ListView
-    Set-PSReadLineOption -EditMode Windows
 
     Install-Module -Name Terminal-Icons -Repository PSGallery
-    Import-Module -Name Terminal-Icons
 }
 
+Set-PSReadLineOption -PredictionSource History
+Set-PSReadLineOption -PredictionViewStyle ListView
+Set-PSReadLineOption -EditMode Windows
+
+Import-Module -Name Terminal-Icons
 
 oh-my-posh --init --shell pwsh --config C:\source\public\terminal\ohmyposh-config.json | Invoke-Expression
