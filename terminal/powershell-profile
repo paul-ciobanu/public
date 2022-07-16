@@ -7,6 +7,8 @@ if ($host.Name -eq 'ConsoleHost')
     Install-Module -Name PSReadLine -AllowPrerelease -Scope CurrentUser -Force -SkipPublisherCheck
 
     Install-Module -Name Terminal-Icons -Repository PSGallery
+
+    winget install JanDeDobbeleer.OhMyPosh
 }
 
 Set-PSReadLineOption -PredictionSource History
